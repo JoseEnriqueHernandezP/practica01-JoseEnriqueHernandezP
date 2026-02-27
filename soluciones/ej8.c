@@ -1,23 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int a [5] ;
-    printf("Direcciones fuera de rango:\n") ;
-    printf(" &a[-1]=%p\n", (void*)&a[-1]) ;
-    printf(" &a[5] =%p\n\n", (void*)&a[5]) ;
 
-    int base = 2000;
-    int sizeofInt= 4;
-    int direccion= 2024;
+    int base =2000;
+    int size =4;          
+    int direccion =2024;  
+    int columnas= ((direccion - base) / size) - 2; 
+    int filas = 2;                           
+    int totalElementos =filas*columnas;
+    int tamañoTotal=totalElementos*size;
 
-    int columnas = ((direccion - base) / sizeofInt) - 2;
-    int filas = 2;
-    int totalElementos = filas* columnas;
-    int tamañoTotal = totalElementos *sizeofInt;
+    printf("Datos:\nBase = %d\nsizeof(int) =%d\nm[1][2] =%d\n\n",
+           base, size, direccion);
 
-    printf("Calculo de la matriz:\n");
-    printf("Las columnas son = %d\n", columnas);
-    printf("Tamaño total = %d bytes\n", tamanoTotal);
+    printf("Numero de columnas = %d\n", columnas);
+    printf("El tamaño total de la matriz = %d bytes\n", tamañoTotal);
 
     return 0;
 }
