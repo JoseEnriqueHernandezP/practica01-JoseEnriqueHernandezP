@@ -1,6 +1,7 @@
-
 #include <stdio.h>
 int main(){
-    // Resolver ejercicio 10
+    int gigantee[1000000] ;
+    
+    printf( "Direccion de memoria en el: %p", &gigantee) ;
     return 0;
 }
